@@ -1,0 +1,23 @@
+.nav-link {
+    color: #ffffff;
+}
+
+.nav-link:hover {
+    color: #ffc107;
+}
+
+.nav-link:focus {
+    color: #ffffff;
+}
+
+.car {
+    color: white;
+}
+
+#btn-car:hover .nav-link {
+    color: #ffc107;
+}
+
+.chevron-down {
+    width: 13px;
+}
