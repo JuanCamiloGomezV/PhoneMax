@@ -1,0 +1,3 @@
+.card-producto:hover .producto-imagen {
+    filter: opacity(.5);
+}

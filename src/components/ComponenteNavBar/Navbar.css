@@ -1,12 +1,25 @@
-.nav-link {
+.nav-url {
     color: #ffffff;
+    user-select: none;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    font-size: 15px;
 }
 
-.nav-link:hover {
+.nav-url-active {
+    color: #c5c5c5;
+}
+
+.logo {
+    user-select: none;
+}
+
+.nav-url:hover {
     color: #ffc107;
 }
 
-.nav-link:focus {
+.nav-url:focus {
     color: #ffffff;
 }
 
@@ -14,10 +27,44 @@
     color: white;
 }
 
-#btn-car:hover .nav-link {
+#btn-car:hover .car {
     color: #ffc107;
 }
 
 .chevron-down {
     width: 13px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: inline-block;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 20px 0 0;
+    display: inline-block;
+}
+
+li ul li .nav-url {
+    width: 80px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    float: left;
+}
+
+nav ul li ul li {
+    width: 100%;
+}
+
+nav ul li:hover ul {
+    display: block;
 }
