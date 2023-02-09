@@ -5,20 +5,29 @@ import ItemDetailContainer from './components/container/ItemDetailContainer/Item
 import CartContainer from './components/container/CartContainer/CartContainer'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-function App() {
-  
+import Footer from './components/Footer/Footer'
+import CartContextProvider  from './context/CartContextProvider'
+import ErrorContainer from './components/container/ErrorContainer/ErrorContainer'
+import OrderContainer from './components/container/OrderContainer/OrderContainer'
 
+
+function App() {
   return (
-    <BrowserRouter>
-    <Navbar/>
-      <Routes>
-        <Route path='/' element={<ItemListContainer />}/>
-        <Route path='/detail/:id' element={<ItemDetailContainer />}/>
-        <Route path='/categoria/:categoryId' element={<ItemListContainer />}/>
-        <Route path='/cart' element={<CartContainer/>}/>
-        <Route path='*' element={<Navigate to='/'/>}/>
-      </Routes>
-    </BrowserRouter>
+    <CartContextProvider>
+      <BrowserRouter>
+        <Navbar/>
+        <Routes>
+          <Route path='/' element={<ItemListContainer />}/>
+          <Route path='/detail/:id' element={<ItemDetailContainer />}/>
+          <Route path='/categoria/:categoryId' element={<ItemListContainer />}/>
+          <Route path='/categoria/:categoryId/:marcaId' element={<ItemListContainer />}/>
+          <Route path='/cart' element={<CartContainer/>}/>
+          <Route path='/error404' element={<ErrorContainer/>}/>
+        
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
+    </CartContextProvider>
   )
 }
 

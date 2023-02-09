@@ -1,5 +1,5 @@
-import React from 'react'
-import {RotatingSquare} from 'react-loader-spinner'
+import React from "react";
+import { RotatingSquare } from "react-loader-spinner";
 
 const Loader = () => {
   return (
@@ -11,8 +11,9 @@ const Loader = () => {
       strokeWidth="4"
       wrapperStyle={{}}
       wrapperClass=""
-      visible={true} />
-  )
-}
+      visible={true}
+    />
+  );
+};
 
-export default Loader
+export default Loader;

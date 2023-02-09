@@ -1,22 +1,29 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import './Item.css'
-import { Link } from 'react-router-dom'
+import React from "react";
+import "./Item.css";
+import { Link } from "react-router-dom";
 
-const Item = ({producto}) => {
+const Item = ({ producto }) => {
   return (
-    <Card style={{ width: '15rem' }} className='m-2 card-producto'>
-      <Card.Img variant="top" src={producto.imagen} className='p-3 producto-imagen' />
-      <Card.Body className='d-flex justify-content-center flex-column'>
-        <Card.Title className='text-center'>{producto.nombre}</Card.Title>
-        <Card.Text className='text-center'>
-          ${producto.precio}
-        </Card.Text>
-        <Link to={`/detail/${producto.id}`} className='w-100'><Button className='w-100' variant="warning">Detalles</Button></Link>
-      </Card.Body>
-    </Card>
-  )
-}
+    <div className="card bg-dark my-2 mx-1">
+      <div className="imgBox">
+        <img
+          src={producto.imagen}
+          alt="mouse corsair"
+          className="mouse w-75 mt-1"
+        />
+      </div>
 
-export default Item
+      <div className="contentBox">
+        <h3>{producto.nombre}</h3>
+        <h2 className="price">
+          ${new Intl.NumberFormat().format(producto.precio)}
+        </h2>
+        <Link to={`/detail/${producto.id}`} className="buy detail">
+          Detalles
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default Item;

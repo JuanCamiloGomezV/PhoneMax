@@ -1,0 +1,15 @@
+img {
+    width: 250px;
+    margin-bottom: 30px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+button {
+    background-color: blue;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 0px !important;
+    height: 0px !important;
+}

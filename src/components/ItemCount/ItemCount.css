@@ -1,0 +1,25 @@
+.btn-count {
+    width: 70px;
+    background-color: #212529;
+}
+
+.count {
+    width: 70px;
+    font-size: 20px;
+}
+
+button {
+    font-size: 20px;
+    color: white;
+}
+
+.btn-count:hover,
+.btn-add:hover {
+    background-color: #424649;
+}
+
+.btn-add {
+    height: 40px;
+    width: 210px;
+    background-color: #212529;
+}
