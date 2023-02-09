@@ -1,9 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { CartContext } from "../../context/CartContext";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import Swal from "sweetalert2";
+
 import {
   addDoc,
   collection,
-  doc,
   getFirestore,
+  doc,
   updateDoc,
 } from "firebase/firestore";
 import {
@@ -12,20 +17,16 @@ import {
   validateEmail,
   validateIsNotEmpty,
 } from "../../utils/validateForm";
-
-import { CartContext } from "../../context/CartContext";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import Loader from "../Loader/Loader";
-import Swal from "sweetalert2";
 import { getSingleProducto } from "../../utils/firebase";
-
-//pueba
+import { Link, Navigate } from "react-router-dom";
+import Loader from "../Loader/Loader";
 
 const CartResume = () => {
   const { cartList, clear } = useContext(CartContext);
+  const [idOrder, setIdOrder] = useState(null);
   const [loading, setLoading] = useState(false);
   const [total, setTotal] = useState(0);
+  const [amount, setAmount] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [dataForm, setDataForm] = useState({
     name: "",
@@ -42,6 +43,11 @@ const CartResume = () => {
   const totalProducts = (item) => {
     totalAux = totalAux + Number(item.precio * item.cantidad);
     setTotal(totalAux);
+  };
+  const totalAmount = () => {
+    let c = 0;
+    cartList.forEach((p) => (c += p.amount));
+    setAmount(c);
   };
 
   const orderSuccess = (id) => {
@@ -114,6 +120,7 @@ const CartResume = () => {
     () =>
       cartList.forEach((item) => {
         totalProducts(item);
+        totalAmount();
       }),
     [cartList, total]
   );

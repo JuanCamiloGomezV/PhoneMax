@@ -1,15 +1,15 @@
+import {BrowserRouter,Routes,Route,Navigate} from 'react-router-dom'
+import Navbar from './components/ComponenteNavBar/Navbar'
+import ItemListContainer from './components/container/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/container/ItemDetailContainer/ItemDetailContainer'
+import CartContainer from './components/container/CartContainer/CartContainer'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom'
-
-import CartContainer from './components/container/CartContainer/CartContainer'
+import Footer from './components/Footer/Footer'
 import CartContextProvider  from './context/CartContextProvider'
 import ErrorContainer from './components/container/ErrorContainer/ErrorContainer'
-import Footer from './components/Footer/Footer'
-import ItemDetailContainer from './components/container/ItemDetailContainer/ItemDetailContainer'
-import ItemListContainer from './components/container/ItemListContainer/ItemListContainer'
-import Navbar from './components/ComponenteNavBar/Navbar'
+import OrderContainer from './components/container/OrderContainer/OrderContainer'
+
 
 function App() {
   return (
