@@ -17,7 +17,7 @@ Ecommerce de productos tecnologicos realizado con ReactJS
 
 ## Demo
 
-https://phone-max.netlify.app/
+Esta desplegado en Netlify https://phone-max.netlify.app/
 
 ## Instalación
 
@@ -27,5 +27,6 @@ Instalar las dependencias y levanta el servidor
 
 ```sh
 $ git clone https://github.com/JuanCamiloGomezV/PreEntrega2Gomez.git
-npm run dev
+$ npm install
+$ npm run dev
 ```
