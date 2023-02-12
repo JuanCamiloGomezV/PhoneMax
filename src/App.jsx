@@ -8,7 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer/Footer'
 import CartContextProvider  from './context/CartContextProvider'
 import ErrorContainer from './components/container/ErrorContainer/ErrorContainer'
-import OrderContainer from './components/container/OrderContainer/OrderContainer'
 
 
 function App() {
